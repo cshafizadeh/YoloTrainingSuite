@@ -1,0 +1,6 @@
+path: /Users/cshafizadeh/Web Scraper/
+train: images/tiger/train
+val: images/tiger/validate
+
+names:
+  0: tiger
