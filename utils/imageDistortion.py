@@ -5,6 +5,8 @@ import numpy as np
 
 def adjustBrightness(image: Image.Image, factor: float) -> Image.Image:
     """Adjust the brightness of an image by a given factor."""
+    if image.mode != 'RGB':
+        image = image.convert('RGB')  # Ensure image is in RGB mode
     enhancer = ImageEnhance.Brightness(image)
     return enhancer.enhance(factor)
 
@@ -33,10 +35,15 @@ def processImages(directory: str):
                 case default:
                     continue
             
+            # Convert RGBA to RGB before saving if necessary
+            if image.mode == 'RGBA':
+                image = image.convert('RGB')
+            
             # Save the modified image
             modified_image_path = os.path.join(directory, f"{filename}")
             image.save(modified_image_path)
             print(f"Processed {filename} -> {modified_image_path}")
+
 
 def main(query: str = "tiger"):
     print("Modifying Images")

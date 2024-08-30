@@ -20,7 +20,8 @@ def createPredefinedClassesFile(classes: list, output_dir: str):
     print(f"Predefined classes file created at: {file_path}")
 
 def main():
-    query = "tiger"
+    query = "letter a"
+    query = query.replace(" ", "-")
     numImages = 300
     print("Running webScraper...")
     webScraperMain(query, numImages)
@@ -30,7 +31,7 @@ def main():
     organizeImagesMain(query)
 
     # Define your classes
-    classes = ["tiger"]
+    classes = ["a"]
     output_dir = f"./images/{query}"
     # Create the predefined_classes.txt file
     createPredefinedClassesFile(classes, output_dir)
