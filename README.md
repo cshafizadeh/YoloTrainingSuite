@@ -1,4 +1,4 @@
-<h1 align="center">OpenAI RAG Model</h1>
+<h1 align="center">YOLO Training Suite</h1>
 <div align="center">
   
   ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
